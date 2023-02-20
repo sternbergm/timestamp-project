@@ -29,7 +29,7 @@ app.get("/api/:date?", (req, res) => {
   if (!req.params.date) {
     date = new Date(parseInt(Date.now()));
   }
-  else if (req.params.date.includes("-")) {
+  else if (isNaN(req.params.date)) {
     date = new Date(req.params.date);
   }
   else {
